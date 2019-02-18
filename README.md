@@ -50,19 +50,26 @@ This Ipython notebook contains all the steps needed to clean and process our dat
 4. Perform Data Cleaning Stage 2: Pre-processing of the review texts.
 
 (a) Remove urls from text using python. Visit: https://stackoverflow.com/a/40823105/4084039
+
 (b) Remove HTML tags from all the reviews.
+
 (c) Exapnd the most common English contractions present in the reviews. Visit https://en.wikipedia.org/wiki/Wikipedia:List_of_English_contractions for a list of all contractions available in English Language. Visit ttps://stackoverflow.com/a/47091490/4084039 for more information on how to expand contractions.
+
 (d) Remove words with numbers using python. Visit https://stackoverflow.com/a/18082370/4084039 for ref.
+
 (e) Remove Punctuations from all the reviews using Regular Expressions. This will keep only words containing letters A-Z and a-z. This will remove all punctuations, special characters etc. https://stackoverflow.com/a/5843547/4084039 for more reference.
+
 (f) Remove words like 'zzzzzzzzzzzzzzzzzzzzzzz', 'testtting', 'grrrrrrreeeettttt' etc. Preserves words like 'looks', 'goods', 'soon' etc. We will remove all such words which has three consecutive repeating characters. Visit #https://stackoverflow.com/questions/37012948/regex-to-match-an-entire-word-that-contains-repeated-character
+
 (g) Use SnowballStemmer or PortalStemmer to remove all the frequently occuring stopwords from each review. Having said that, we will preserve stopwords like 'not','nor','no'. Because, if you think intuitively, words like 'not' might be used more often while dealing with negative reviews. So we will keep them!
+
 (h) We will remove all the stemmed words which has a length greater than 15. By looking at the distribution of the length of words we can see that most stemmed words present in the reviews has lengths between 4 and 10. Words which has length greater than 15 are very very very few as compared to other words. So we will discard these words from the reviews when we process them. It means we will consider only those words whose length is greater than 2 and less than 16.
+
 (i) After cleaning the dataset we will save the processed dataset in a DB called totally_processed_DB.sqlite. We will use this DB for all our future works.
 
 5. We will now plot a Histogram to check the distribution of positive as well as negative reviews in the pre-processed dataset.
 
-
-5. Featurizations: After processing the data we will use the following 5 featurization techniques to build ML/DL models on top of them.
+6. Featurizations: After processing the data we will use the following 5 featurization techniques to build ML/DL models on top of them.
 
 (a) Bag of Words featurization.
 
@@ -114,5 +121,5 @@ In this model we convert each word present in a review to vectors. For each sent
 
 Suppose we have N words in a sentence {w1,w2,w3,w4,w5,w6 ... , wN}. We will compute the tf-idf for each word in a review for all reviews. Lets say the corresponding tf-idfs are {t1,t2,t3,t4,t5,t6......tN}. We will convert each word to a vector, sum them up and divide by the summation of tf-idf vectors for all words present in that particular sentence. So our final vector will look like [1/(t1+t2+t3+t4+t5+t6+ ..... +tN)] * [word2vec(w1) + word2vec(w2) + word2vec(w3) .... + word2vec(wN)]
 
-6. After performing the featurization tasks, we will se 100K reviews as our train data. We will use 40K datapoints to caliberate our model and 30K data points to predict the performance of the model on new unseen data.
+7. After performing the featurization tasks, we will se 100K reviews as our train data. We will use 40K datapoints to caliberate our model and 30K data points to predict the performance of the model on new unseen data.
 
