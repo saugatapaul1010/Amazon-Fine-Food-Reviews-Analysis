@@ -2,6 +2,8 @@
 
 <img src='images/amazon.jpg'>
 
+Image from: https://evantamle.wordpress.com/2015/05/11/sentiment-analysis-of-amazon-fine-foods-reviews/
+
 This repository contains a series of experiments performed on the Amazon Reviews dataset. This includes data visualization techniques like PCA and T-SNE. It also includes curating, de-duping and cleaning the dataset to perform a series of NLP related tasks. You will learn about a series of models which includes KNN, Naive Bayes, Logistic Regression, SVMs, Decision Trees, GBDTs, XGBoosts, Random Forests etc. You weill also learn about applying clustering techniques like KMeans, Agglomerative clustering and DBSCAN. You will further learn about Matrix Factorization usng Truncated SVD followed by KMeans clustering.
 
 The dataset can be downloaded from : https://www.kaggle.com/snap/amazon-fine-food-reviews
